@@ -3,13 +3,13 @@
 public class Spawner : MonoBehaviour
 {
     //ссылка на префаб
-    public GameObject myAsterod;
+    public GameObject myPrefab;
 
     void Start()
     {
         //создание астероида в точке SpawnAsteroid на сцене
-        GameObject Asteroid = Instantiate(myAsterod, transform.position, transform.rotation);
-        //увеличение переменной общего количества астероидов в игре
+        GameObject enemy = Instantiate(myPrefab, transform.position, transform.rotation);
+        //увеличение переменной общего количества врагов в игре
         GameManager.instance.allEnemyes++;
     }
 }

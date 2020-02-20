@@ -42,8 +42,6 @@ public class Player : MonoBehaviour
     //ссылка на компонент AudioSource, для воспроизведения звука
     private AudioSource audioSource;
 
-    public AudioClip fly;
-
     //время ожидания для корутины Recovery()
     public float recoveryTime;
 
