@@ -52,6 +52,9 @@ public class Asteroid : MonoBehaviour
 
     void Start()
     {
+        //увеличение переменной общего количества врагов в игре
+        GameManager.instance.allEnemyes++;
+
         //инициализация компонента Rigidbody2D
         rg = GetComponent<Rigidbody2D>();
 
@@ -62,6 +65,7 @@ public class Asteroid : MonoBehaviour
         //добавление скорости и вращение астероиду
         rg.AddForce(force);
         rg.AddTorque(torque);
+        
     }
 
     void Update()
@@ -111,9 +115,7 @@ public class Asteroid : MonoBehaviour
                 GameManager.instance.UpdateScores();
                 GameObject effect = Instantiate(explosionEffect, transform.position, transform.rotation);
                 GameObject AteroidStandart = Instantiate(asteroidStandart, transform.position, transform.rotation);
-                GameManager.instance.allEnemyes++; //увеличение переменной общего количества врагов в игре
                 GameObject newAteroidStandart = Instantiate(asteroidStandart, transform.position, transform.rotation);
-                GameManager.instance.allEnemyes++;
                 Destroy(gameObject);
                 Destroy(effect, liveTimeEffect);
                 
@@ -126,9 +128,7 @@ public class Asteroid : MonoBehaviour
                 GameManager.instance.UpdateScores();
                 GameObject effect = Instantiate(explosionEffect, transform.position, transform.rotation);
                 GameObject AteroidSmall = Instantiate(asteroidSmall, transform.position, transform.rotation);
-                GameManager.instance.allEnemyes++;
                 GameObject newAteroidSmall = Instantiate(asteroidSmall, transform.position, transform.rotation);
-                GameManager.instance.allEnemyes++;
                 Destroy(gameObject);
                 Destroy(effect, liveTimeEffect);
             }

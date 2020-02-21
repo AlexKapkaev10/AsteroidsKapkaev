@@ -52,6 +52,9 @@ public class UFO : MonoBehaviour
 
     private void Start()
     {
+        //увеличение переменной общего количества врагов в игре
+        GameManager.instance.allEnemyes++;
+
         //присвоение рандомного времени ожидани от момента старта игры,
         //до момнета движения тарелки, используется в корутине MoveActive()
         waitTime = Random.Range(minWaitTime, maxWaitTime);
