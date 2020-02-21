@@ -78,11 +78,13 @@ public class UFO : MonoBehaviour
             StartCoroutine(MoveActive());
 
         //проигрывание сирены
-        if(canMove && !alarm)
+        if(canMove && !alarm && !GameManager.instance.gameOver)
         {
             audioSource.Play();
             alarm = true;
         }
+        if (GameManager.instance.gameOver)
+            audioSource.Stop();
 
         //движение тарелки по точкам следования и релизация стрельбы, когда текущая точка следования - это игрок
         if (currentWaypoint < waypoints.Length && canMove && !GameManager.instance.gameOver)
