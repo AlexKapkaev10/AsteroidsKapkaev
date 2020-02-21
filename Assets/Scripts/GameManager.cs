@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     //при уничтожении всех астероидов игрок побеждает и может сыграть снова
     public void Win()
     {
-        if (allEnemyes == 0)
+        if (allEnemyes == 0 && isStart)
         {
             Time.timeScale = 0;
             winPanel.SetActive(true);
